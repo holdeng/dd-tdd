@@ -4,4 +4,11 @@
   <artifactId>evercraft</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Evercraft Domain Model</name>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.projectlombok</groupId>
+  		<artifactId>lombok</artifactId>
+  		<version>1.16.4</version>
+  	</dependency>
+  </dependencies>
 </project>
