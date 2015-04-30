@@ -7,14 +7,15 @@ import org.junit.Before;
 import org.junit.Test;
 
 import ab.evercraft.domain.EvercraftCharacter;
+import ab.evercraft.domain.EvercraftCharacterDefaults;
 import ab.evercraft.exception.InvalidAlignmentException;
 
 public class EvercraftCharacterTest {
     
-    EvercraftCharacter myCharacter = null;
-    public static final String CHARACTER_NAME = "Scott";
-    public static final String VALID_ALIGNMENT = "Good";
-    public static final String INVALID_ALIGNMENT = "Bad Ass";
+    private EvercraftCharacter myCharacter = null;
+    private static final String CHARACTER_NAME = "Scott";
+    private static final String VALID_ALIGNMENT = "Good";
+    private static final String INVALID_ALIGNMENT = "Bad Ass";
     
     @Before
     public void setUp() throws Exception {
@@ -42,4 +43,15 @@ public class EvercraftCharacterTest {
     public void setingInvalidAlignmentThrowsException() {
         myCharacter.setAlignment(INVALID_ALIGNMENT);
     }
+    
+    @Test
+    public void newCharacterHasCorrectArmorClassDefault() {
+        assertEquals(EvercraftCharacterDefaults.ARMOR_CLASS, myCharacter.getArmorClass());
+    }
+    
+    @Test
+    public void newCharacterHasCorrectHitPointsDefault() {
+        assertEquals(EvercraftCharacterDefaults.HIT_POINTS, myCharacter.getHitPoints());
+    }
+    
 }
