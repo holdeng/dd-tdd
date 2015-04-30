@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import ab.evercraft.domain.EvercraftCharacter;
+import ab.evercraft.exception.InvalidAlignmentException;
 
 public class EvercraftCharacterTest {
     
@@ -37,8 +38,8 @@ public class EvercraftCharacterTest {
         assertEquals(VALID_ALIGNMENT, myCharacter.getAlignment());
     }
     
-    @Test
-    public void cannotSetInvalidAlignment() {
+    @Test(expected = InvalidAlignmentException.class)
+    public void setingInvalidAlignmentThrowsException() {
         myCharacter.setAlignment(INVALID_ALIGNMENT);
     }
 }
